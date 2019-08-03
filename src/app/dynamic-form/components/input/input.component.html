@@ -1,0 +1,16 @@
+<mat-form-field [formGroup]="group" fxFlex="300px">
+  <input
+    matInput
+    [formControlName]="formConfig.name"
+    [placeholder]="formConfig.label"
+    type="text"
+  />
+  <ng-container
+    *ngFor="let validation of formConfig.validations"
+    ngProjectAs="mat-error"
+  >
+    <mat-error *ngIf="group.get(formConfig.name).hasError(validation.name)">{{
+      validation.message
+    }}</mat-error>
+  </ng-container>
+</mat-form-field>
