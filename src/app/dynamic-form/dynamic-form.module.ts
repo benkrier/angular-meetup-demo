@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
-import { DynamicFormComponent } from "./containers/dynamic-form.component";
+import { DynamicFormComponent } from "./dynamic-form.component";
 import { InputComponent } from "./components/input/input.component";
 import { SelectComponent } from "./components/select/select.component";
 import { TextAreaComponent } from "./components/text-area/text-area.component";

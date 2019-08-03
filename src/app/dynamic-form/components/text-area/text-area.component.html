@@ -1,3 +1,18 @@
-<p>
-  text-area works!
-</p>
+<mat-form-field [formGroup]="group">
+  <textarea
+    [formControlName]="formConfig.name"
+    [placeholder]="formConfig.label"
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    (change)="triggerResize()"
+    matInput
+  ></textarea>
+  <ng-container
+    *ngFor="let validation of formConfig.validations"
+    ngProjectAs="mat-error"
+  >
+    <mat-error *ngIf="group.get(formConfig.name).hasError(validation.name)">{{
+      validation.message
+    }}</mat-error>
+  </ng-container>
+</mat-form-field>

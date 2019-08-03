@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { DynamicFormConfigObject } from "../../models/dynamic-form-config-model";
 
 @Component({
   selector: "app-row",

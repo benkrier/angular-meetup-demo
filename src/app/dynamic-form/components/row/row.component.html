@@ -1,3 +1,9 @@
-<p>
-  row works!
-</p>
+<div fxLayout="row wrap">
+  <ng-container
+    *ngFor="let rowfield of formConfig.rowFields"
+    fuseDynamicField
+    [formConfig]="rowfield"
+    [group]="group"
+  >
+  </ng-container>
+</div>

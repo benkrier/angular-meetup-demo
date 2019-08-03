@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
-import { DynamicFormConfigObject } from "../models/dynamic-form-config-model";
+import { DynamicFormConfigObject } from "./models/dynamic-form-config-model";
 
 @Component({
   selector: "app-dynamic-form",
@@ -47,7 +47,7 @@ export class DynamicFormComponent implements OnInit {
     return group;
   }
 
-  createControl(config: CasechekFormConfigObject) {
+  createControl(config: DynamicFormConfigObject) {
     const { value, disabled } = config;
     const validators = config.validations.map(x => x.validator);
     return this.formBuilder.control({ value, disabled }, validators);
