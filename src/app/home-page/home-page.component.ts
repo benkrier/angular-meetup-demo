@@ -11,12 +11,11 @@ export class HomePageComponent implements OnInit {
   dataSource: any;
   tableConfig: any[];
   formConfig: any[];
-  newTemplate = false;
-  editTemplate = false;
   formValid = false;
   saving = false;
   deleting = false;
-  @ViewChild(DynamicFormComponent) casechekForm: DynamicFormComponent;
+  @ViewChild(DynamicFormComponent, { static: true })
+  casechekForm: DynamicFormComponent;
 
   constructor() {
     // Configuration passed to casechek-table component
@@ -58,7 +57,7 @@ export class HomePageComponent implements OnInit {
               {
                 name: "maxlength",
                 validator: Validators.maxLength(20),
-                message: "Must be less than 100 characters"
+                message: "Must be less than 20 characters"
               }
             ]
           },
@@ -76,7 +75,7 @@ export class HomePageComponent implements OnInit {
               {
                 name: "maxlength",
                 validator: Validators.maxLength(20),
-                message: "Must be less than 100 characters"
+                message: "Must be less than 20 characters"
               }
             ]
           }

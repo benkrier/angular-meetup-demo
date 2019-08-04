@@ -1,14 +1,13 @@
 import { NgModule } from "@angular/core";
 
 import {
+  MatToolbarModule,
   MatButtonModule,
   MatIconModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatListModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
   MatSelectModule,
   MatOptionModule,
   MatCheckboxModule,
@@ -17,28 +16,26 @@ import {
 
 @NgModule({
   imports: [
+    MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatSelectModule,
     MatOptionModule,
     MatCheckboxModule,
     MatRadioModule
   ],
   exports: [
+    MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatSelectModule,
     MatOptionModule,
     MatCheckboxModule,

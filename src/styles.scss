@@ -1,4 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.dynamic-detail {
+  padding: 10px 20px;
+  padding-left: 50px;
+  margin-bottom: 73px;
+  margin-top: 10px;
+
+  &__section {
+    padding-top: 20px;
+    &:last-child {
+      padding-bottom: 20px;
+    }
+    &-title {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid lightgrey;
+    }
+    &-form {
+      margin-top: 27px;
+      mat-form-field {
+        font-size: 15px;
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  .alert-red {
+    color: red;
+  }
+}

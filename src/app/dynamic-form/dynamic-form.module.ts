@@ -8,9 +8,10 @@ import { TextAreaComponent } from "./components/text-area/text-area.component";
 import { DynamicFieldDirective } from "./directives/dynamic-field.directive";
 import { TitleComponent } from "./components/title/title.component";
 import { RowComponent } from "./components/row/row.component";
+import { MaterialModule } from "../material.module";
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
   declarations: [
     DynamicFormComponent,
     InputComponent,

@@ -11,7 +11,7 @@ import { SelectComponent } from "../components/select/select.component";
 import { TextAreaComponent } from "../components/text-area/text-area.component";
 import { TitleComponent } from "../components/title/title.component";
 import { RowComponent } from "../components/row/row.component";
-import { DynamicFormConfigObject } from "../models/dynamic-form-config-model";
+import { DynamicFormConfigObject } from "../models/dynamic-form-config-object";
 
 @Directive({
   selector: "[fuseDynamicField]"

@@ -1,3 +1,13 @@
-<p>
-  dynamic-form works!
-</p>
+<div class="dynamic-detail">
+  <div class="dynamic-detail__section">
+    <form class="dynamic-detail__section-form" [formGroup]="form">
+      <ng-container
+        *ngFor="let field of formConfig"
+        fuseDynamicField
+        [formConfig]="field"
+        [group]="form"
+      >
+      </ng-container>
+    </form>
+  </div>
+</div>

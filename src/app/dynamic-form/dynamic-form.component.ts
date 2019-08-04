@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
-import { DynamicFormConfigObject } from "./models/dynamic-form-config-model";
+import { DynamicFormConfigObject } from "./models/dynamic-form-config-object";
 
 @Component({
   selector: "app-dynamic-form",
