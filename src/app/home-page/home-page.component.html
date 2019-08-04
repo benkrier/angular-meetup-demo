@@ -1,3 +1,14 @@
 <p>
   home-page works!
 </p>
+
+<app-dynamic-table
+  *ngIf="!newTemplate && !editTemplate"
+  [dataSource]="dataSource"
+  [tableConfig]="tableConfig"
+></app-dynamic-table>
+
+<app-dynamic-form
+  *ngIf="newTemplate || editTemplate"
+  [formConfig]="formConfig"
+></app-dynamic-form>
