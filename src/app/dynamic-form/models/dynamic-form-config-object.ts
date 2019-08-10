@@ -1,4 +1,4 @@
-import { ValidatorFn } from "@angular/forms";
+import { ValidatorFn } from '@angular/forms';
 
 export class DynamicFormConfigObject {
   type: string;

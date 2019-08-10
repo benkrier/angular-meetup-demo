@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { DynamicFormConfigObject } from "./models/dynamic-form-config-object";
+import { DynamicFormConfigObject } from './models/dynamic-form-config-object';
 
 @Component({
-  selector: "app-dynamic-form",
-  templateUrl: "./dynamic-form.component.html",
-  styleUrls: ["./dynamic-form.component.scss"]
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss']
 })
 export class DynamicFormComponent implements OnInit {
   @Input()
@@ -14,18 +14,10 @@ export class DynamicFormComponent implements OnInit {
 
   form: FormGroup;
 
-  get changes() {
-    return this.form.valueChanges;
-  }
-  get valid() {
-    return this.form.valid;
-  }
-  get dirty() {
-    return this.form.dirty;
-  }
-  get rawValue() {
-    return this.form.getRawValue();
-  }
+  get changes() { return this.form.valueChanges; }
+  get valid() { return this.form.valid; }
+  get dirty() { return this.form.dirty; }
+  get rawValue() { return this.form.getRawValue(); }
 
   constructor(public formBuilder: FormBuilder) {}
 
