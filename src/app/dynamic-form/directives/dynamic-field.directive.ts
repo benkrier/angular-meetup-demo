@@ -4,17 +4,17 @@ import {
   Input,
   OnInit,
   ViewContainerRef
-} from "@angular/core";
-import { FormGroup } from "@angular/forms";
-import { InputComponent } from "../components/input/input.component";
-import { SelectComponent } from "../components/select/select.component";
-import { TextAreaComponent } from "../components/text-area/text-area.component";
-import { TitleComponent } from "../components/title/title.component";
-import { RowComponent } from "../components/row/row.component";
-import { DynamicFormConfigObject } from "../models/dynamic-form-config-object";
+} from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { InputComponent } from '../components/input/input.component';
+import { SelectComponent } from '../components/select/select.component';
+import { TextAreaComponent } from '../components/text-area/text-area.component';
+import { TitleComponent } from '../components/title/title.component';
+import { RowComponent } from '../components/row/row.component';
+import { DynamicFormConfigObject } from '../models/dynamic-form-config-object';
 
 @Directive({
-  selector: "[fuseDynamicField]"
+  selector: '[appDynamicField]'
 })
 export class DynamicFieldDirective implements OnInit {
   @Input() formConfig: DynamicFormConfigObject;

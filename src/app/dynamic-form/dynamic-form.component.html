@@ -3,7 +3,7 @@
     <form class="dynamic-detail__section-form" [formGroup]="form">
       <ng-container
         *ngFor="let field of formConfig"
-        fuseDynamicField
+        appDynamicField
         [formConfig]="field"
         [group]="form"
       >
