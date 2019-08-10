@@ -28,7 +28,7 @@ describe('TitleComponent', () => {
   });
 
   it('should render title component with correct formConfig title value', () => {
-    const placeholder = componentEl.querySelector('.casechek-detail__section-title');
+    const placeholder = componentEl.querySelector('.dynamic-form__section-title');
     expect(placeholder.textContent.trim()).toBe('Test Title');
   });
 });
