@@ -30,8 +30,8 @@ export class DynamicFieldDirective implements OnInit {
       title: TitleComponent,
       input: InputComponent,
       select: SelectComponent,
-      textAreaLg: TextAreaComponent,
-      row: RowComponent
+      textArea: TextAreaComponent,
+      row: RowComponent,
     };
   }
 
