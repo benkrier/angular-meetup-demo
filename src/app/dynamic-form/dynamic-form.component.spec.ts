@@ -1,17 +1,16 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {CasechekFormComponent} from './casechek-form.component';
 import {FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Component, Directive, Input, ViewChild} from '@angular/core';
 import {DynamicFormComponent} from './dynamic-form.component';
 
-describe('CasechekFormComponent', () => {
+describe('DynamicFormComponent', () => {
   let mockParentComponent: MockParentComponent;
   let mockParentFixture: ComponentFixture<MockParentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        CasechekFormComponent,
+        DynamicFormComponent,
         MockParentComponent,
         MockDynamicFieldDirective,
       ],
@@ -86,7 +85,7 @@ describe('CasechekFormComponent', () => {
 
   @Component({
     selector: 'app-mock-parent-component',
-    template: '<fuse-casechek-form [formConfig]="mockFormConfig"></fuse-casechek-form>'
+    template: '<app-dynamic-form [formConfig]="mockFormConfig"></app-dynamic-form>'
   })
   class MockParentComponent {
     @ViewChild(DynamicFormComponent, {static: true})
