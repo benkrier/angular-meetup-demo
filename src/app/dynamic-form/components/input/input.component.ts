@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { FormGroup } from "@angular/forms";
-import { DynamicFormConfigObject } from "../../models/dynamic-form-config-object";
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { DynamicFormConfigObject } from '../../models/dynamic-form-config-object';
 
 @Component({
-  selector: "app-input",
-  templateUrl: "./input.component.html",
-  styleUrls: ["./input.component.scss"]
+  selector: 'app-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
   formConfig: DynamicFormConfigObject;
