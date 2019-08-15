@@ -8,7 +8,7 @@ import {DynamicFormConfigObject} from '../dynamic-form/models/dynamic-form-confi
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements AfterViewInit {
+export class HomePageComponent implements OnInit, AfterViewInit {
   formConfig: any[];
   formValid = false;
   formData: DynamicFormConfigObject;
@@ -20,7 +20,7 @@ export class HomePageComponent implements AfterViewInit {
     this.formConfig = [
       {
         type: 'title',
-        title: 'Label Template'
+        title: 'Dynamic Forms Demo Info'
       },
       {
         type: 'row',
@@ -66,7 +66,13 @@ export class HomePageComponent implements AfterViewInit {
     ];
   }
 
+  ngOnInit() {}
+
   ngAfterViewInit() {
+    this.onFormChanges();
+  }
+
+  onFormChanges() {
     this.dynamicForm.changes.subscribe(() => {
       this.formValid = this.dynamicForm.valid;
     });
