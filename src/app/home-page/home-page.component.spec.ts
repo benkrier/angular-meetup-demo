@@ -1,8 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed} from '@angular/core/testing';
 import { HomePageComponent } from './home-page.component';
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {BehaviorSubject} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 const testBehaviorSubject = new  BehaviorSubject({value: ''});
 // Mock component for casechek-form
@@ -56,11 +57,4 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should check form for validity', () => {
-  //   testBehaviorSubject.next({value: 'new string'});
-  //   component.ngAfterViewInit();
-  //   fixture.detectChanges();
-  //   expect(component.formValid).toBeTruthy();
-  // });
 });

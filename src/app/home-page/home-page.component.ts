@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 import { Validators } from '@angular/forms';
 import {DynamicFormConfigObject} from '../dynamic-form/models/dynamic-form-config-object';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-page',
@@ -66,14 +67,17 @@ export class HomePageComponent implements OnInit, AfterViewInit {
     ];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   ngAfterViewInit() {
     this.onFormChanges();
   }
 
   onFormChanges() {
-    this.dynamicForm.changes.subscribe(() => {
+    this.dynamicForm.changes.pipe(
+      delay(0)
+    ).subscribe(() => {
       this.formValid = this.dynamicForm.valid;
     });
   }
