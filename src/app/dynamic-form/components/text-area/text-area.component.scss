@@ -1,0 +1,12 @@
+.dynamic-form__component {
+  margin-bottom: 10px;
+  width: 400px;
+  max-width: 850px;
+
+  &-text-area-lg {
+    font-family: 'Source Code Pro', monospace;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+  }
+}

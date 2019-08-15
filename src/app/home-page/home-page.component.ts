@@ -63,7 +63,25 @@ export class HomePageComponent implements OnInit, AfterViewInit {
             ]
           }
         ]
-      }
+      },
+      {
+        type: 'textArea',
+        label: 'Life Story',
+        name: 'lifeStory',
+        value: '',
+        validations: [
+          {
+            name: 'required',
+            validator: Validators.required,
+            message: 'Required'
+          },
+          {
+            name: 'minlength',
+            validator: Validators.minLength(10),
+            message: 'Must be more than 10 characters'
+          }
+        ]
+      },
     ];
   }
 

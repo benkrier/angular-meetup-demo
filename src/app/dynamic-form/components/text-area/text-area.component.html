@@ -1,7 +1,8 @@
-<mat-form-field [formGroup]="group">
+<mat-form-field class="dynamic-detail__section dynamic-form__component" [formGroup]="group">
   <textarea
     [formControlName]="formConfig.name"
     [placeholder]="formConfig.label"
+    class="dynamic-form__component-text-area-lg"
     cdkTextareaAutosize
     #autosize="cdkTextareaAutosize"
     (change)="triggerResize()"
