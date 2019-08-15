@@ -1,81 +1,63 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { DynamicFormComponent } from "../dynamic-form/dynamic-form.component";
-import { Validators } from "@angular/forms";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
+import { Validators } from '@angular/forms';
+import {DynamicFormConfigObject} from '../dynamic-form/models/dynamic-form-config-object';
 
 @Component({
-  selector: "app-home-page",
-  templateUrl: "./home-page.component.html",
-  styleUrls: ["./home-page.component.scss"]
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
-  dataSource: any;
-  tableConfig: any[];
+export class HomePageComponent implements AfterViewInit {
   formConfig: any[];
   formValid = false;
-  saving = false;
-  deleting = false;
+  formData: DynamicFormConfigObject;
   @ViewChild(DynamicFormComponent, { static: true })
-  casechekForm: DynamicFormComponent;
+  dynamicForm: DynamicFormComponent;
 
   constructor() {
-    // Configuration passed to casechek-table component
-    this.tableConfig = [
-      {
-        columnDef: "firstName",
-        header: "First Name",
-        width: "300px",
-        cell: (element: any) => `${element.firstName}`
-      },
-      {
-        columnDef: "lastName",
-        header: "Last Name",
-        width: "300px",
-        cell: (element: any) => `${element.lastName}`
-      }
-    ];
-
-    // Configuration passed to casechek-form component. Note incorporation of dynamic data for form properties.
+    // Configuration passed to dynamic-form component.
     this.formConfig = [
       {
-        type: "title",
-        title: "Label Template"
+        type: 'title',
+        title: 'Label Template'
       },
       {
-        type: "row",
+        type: 'row',
         rowFields: [
           {
-            type: "input",
-            label: "First Name",
-            name: "firstName",
-            value: "",
+            type: 'input',
+            label: 'First Name',
+            name: 'firstName',
+            value: '',
             validations: [
               {
-                name: "required",
+                name: 'required',
                 validator: Validators.required,
-                message: "Required"
+                message: 'Required'
               },
               {
-                name: "maxlength",
+                name: 'maxlength',
                 validator: Validators.maxLength(20),
-                message: "Must be less than 20 characters"
+                message: 'Must be less than 20 characters'
               }
             ]
           },
           {
-            type: "input",
-            label: "Last Name",
-            name: "last Name",
-            value: "",
+            type: 'input',
+            label: 'Last Name',
+            name: 'last Name',
+            value: '',
             validations: [
               {
-                name: "required",
+                name: 'required',
                 validator: Validators.required,
-                message: "Required"
+                message: 'Required'
               },
               {
-                name: "maxlength",
+                name: 'maxlength',
                 validator: Validators.maxLength(20),
-                message: "Must be less than 20 characters"
+                message: 'Must be less than 20 characters'
               }
             ]
           }
@@ -84,5 +66,13 @@ export class HomePageComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {}
+  ngAfterViewInit() {
+    this.dynamicForm.changes.subscribe(() => {
+      this.formValid = this.dynamicForm.valid;
+    });
+  }
+
+  save() {
+    this.formData = this.dynamicForm.rawValue;
+  }
 }

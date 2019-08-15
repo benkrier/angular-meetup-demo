@@ -1,11 +1,9 @@
-<!-- <app-dynamic-table
-  *ngIf="!newTemplate && !editTemplate"
-  [dataSource]="dataSource"
-  [tableConfig]="tableConfig"
-></app-dynamic-table> -->
+<app-dynamic-form [formConfig]="formConfig"></app-dynamic-form>
 
-<div fxLayout="row">
-  <div fxFlex="40px">
-    <app-dynamic-form [formConfig]="formConfig"></app-dynamic-form>
-  </div>
-</div>
+<!--<mat-button>Action</mat-button>-->
+<button [disabled]="!formValid"
+        (click)="save()"
+        mat-raised-button
+        color="primary">Action</button>
+
+<pre>{{formData | json}}</pre>

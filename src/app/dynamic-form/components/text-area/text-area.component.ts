@@ -1,8 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {take} from 'rxjs/operators';
-import {FormGroup} from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {DynamicFormConfigObject} from '../../models/dynamic-form-config-object';
 
